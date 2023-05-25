@@ -1,7 +1,7 @@
 const ErrorHandler = require("../utils/errorHandler.js");
 
 const errorHanlder = (err, req, res, next) => {
-  // console.log("errrrr", err);
+  console.log("errrrr", err);
   err.statusCode = err.statusCode || 500;
   err.message = err.message || "Internal Server Error";
 
@@ -16,7 +16,7 @@ const errorHanlder = (err, req, res, next) => {
     err = new ErrorHandler(message, 400);
   }
   //ValidationError
-  if (err.name === "ValidationError") {
+  if (err.message === "ValidationError") {
     const message = `Resourse not found: ${err.path}`;
     err = new ErrorHandler(message, 400);
   }

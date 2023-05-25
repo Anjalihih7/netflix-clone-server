@@ -1,0 +1,23 @@
+1. What is JWT?
+==> 
+
+2. What is 'sha256' ?
+==>
+
+3. What we send in JWT parameter ?
+==>
+
+4. Empalin about nodemailer?
+==>
+
+5. what we configs we send in cookie?
+==>
+
+6. when we send file to aws, cloudinary, in which format fill is send, explain briefly ?
+==>
+
+7. explain about bcrypt and salt ?
+==>
+
+8. Explain about mongoose 'pre' , 'method' , 'isModified' ?
+==>

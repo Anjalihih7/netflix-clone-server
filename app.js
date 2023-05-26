@@ -9,8 +9,26 @@ app.use(
     origin: process.env.FRONTEND_URL,
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE"],
+    optionSuccessStatus: 200,
   })
 );
+
+//for cross-origin-issue
+app.use(function (req, res, next) {
+  // res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
+  //res.setHeader("Access-Control-Allow-Origin", "*")
+  //res.setHeader("Access-Control-Allow-Origin", "https://progresshacker.com");
+  res.setHeader("Access-Control-Allow-Credentials", true);
+  res.setHeader("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE");
+  res.setHeader(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  // res.setHeader("Access-Control-Allow-Headers: Content-Type, *");  //new add
+  // res.header("Set-Cookie:token; SameSite=None");  //chng
+  // res.header("Set-Cookie: token; SameSite=None");
+  next();
+});
 
 const user = require("./routes/UserRoutes");
 

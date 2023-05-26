@@ -16,7 +16,7 @@ app.use(
 //for cross-origin-issue
 app.use(function (req, res, next) {
   res.setHeader("Access-Control-Allow-Origin", `${process.env.FRONTEND_URL}`);
-  res.setHeader("Access-Control-Allow-Origin", "*");
+  //   res.setHeader("Access-Control-Allow-Origin", "*");
   //res.setHeader("Access-Control-Allow-Origin", "https://progresshacker.com");
   res.setHeader("Access-Control-Allow-Credentials", true);
   res.setHeader("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE");

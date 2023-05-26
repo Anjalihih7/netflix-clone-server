@@ -5,6 +5,11 @@ app.use(express.json());
 const cache = require("./routeCache");
 
 const user = require("./routes/UserRoutes");
+
+app.get("/", (req, res) => {
+  res.send("<h3> Server Runs Successfully </h3>");
+});
+
 app.use("/api/v1/user", user);
 
 //Middlware for error

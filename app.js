@@ -3,6 +3,14 @@ const app = express();
 const errorMiddleware = require("./middlewares/error");
 app.use(express.json());
 const cache = require("./routeCache");
+const cors = require("cors");
+app.use(
+  cors({
+    origin: process.env.FRONTEND_URL,
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE"],
+  })
+);
 
 const user = require("./routes/UserRoutes");
 

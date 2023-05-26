@@ -1,6 +1,14 @@
 const app = require("./app");
 const connectDB = require("./config/database");
 require("dotenv").config({ path: "./config/config.env" });
+const cors = require("cors");
+app.use(
+  cors({
+    origin: process.env.FRONTEND_URL,
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    optionsSuccessStatus: 200,
+  })
+);
 
 process.on("uncaughtException", (err) => {
   console.log(`Error ${err.message}`);
